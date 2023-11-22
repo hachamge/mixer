@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&family=Ubuntu+Condensed&display=swap');
+
+* {
+	* margin = 0;
+	* padding = 0;
+	* box-sizing: 0;
+}
+
+.screen {
+}
+
+body {
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.mixer {
+	width: 100%;
+	height: 99vh;
+	display: flex;
+	margin: 0 auto;
+	position: relative;
+	align-items: center;
+	overflow: hidden;
+	transition: 2s;
+  background-color: #C9D7DD;
+}
+
+.config {
+	width: 25%;
+	height: 95%;
+	right: 3%;
+	position: absolute;
+	border-radius: 20px;
+	background-color: white;
+}
+
+.config-header {
+	width: 100%;
+	height: 10%;
+	display: flex;
+	align-items: center;
+	border-radius: 20px 20px 0 0;
+	background-color: #EFF0F2;
+}
+
+.config-header p {
+	color: #720e9e;
+	font-size: 1.7em;
+	padding: 5px;
+	background-color: #D8BFD8;
+	position: absolute;
+	left: 10px;
+	border-radius: 5px;
+	font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.config-main {
+	width: 100%;
+	height: 90%;
+	display: flex;
+	flex-direction: column;
+	font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.config-main > p {
+	padding: 5px;
+	color: #720e9e;
+	height: 50px;
+	font-size: 1.7em;
+	text-align: center;
+	/*background-color: #D8BFD8;*/
+	font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.screenshot {
+	width: 87%;
+	height: 300px;
+	background-color: #C9D7DD;
+	margin: 0 auto;
+	transition: 1s;
+}
+
+.slider {
+	width: 87%;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	margin-top: 20px;
+	align-items: flex-start;
+	height: 75px;
+}
+
+.slider * {
+	margin: 0;
+	padding: 0;
+}
+
+.slider p {
+	color: #720e9e;
+	font-size: 1.2em;
+	padding: 5px;
+	font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.slider input[type="range"] {
+	width: 100%;
+	position: relative;
+	top: 13px;
+	background-color: red;
+}
+
+.color-cache {
+	width: 87%;
+	height: 100px;
+	background-color: #EFF0F2;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	overflow: scroll;
+}
+
+.color {
+	min-width: 70px;
+	height: 70px;
+	margin-left: 10px;
+	background-color: black;
+}
+

@@ -1,0 +1,6 @@
+*.py[cod]
+
+db.sqlite3
+
+**.DS_Store
+mixer/__pycache__/

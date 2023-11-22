@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>color-mixer</title>
+		<link rel="icon" href="{% static 'favicon.ico' %}">
+		<link rel="stylesheet" href="{% static 'mixer.css' %}">
+	</head>
+	<body class="screen">
+		<div class="mixer">
+			 <div class="config">
+				 <div class="config-header">
+					 <p>@color-mixer</p>
+				 </div>
+
+				 <div class="config-main">
+					 <p id="primary-color">rgb(52, 71, 106)</p>
+
+					 <div class="screenshot"></div>
+
+					 <div class="slider">
+						 <p style="color: red;">@Red</p>
+						 <input type="range" id="red-slider" min="0" max="255" value="52">
+					 </div>
+
+					 <div class="slider">
+						 <p style="color: green;">@Green</p>
+						 <input type="range" id="green-slider" min="0" max="255" value="71">
+					 </div>
+
+					 <div class="slider">
+						 <p style="color: blue;">@Blue</p>
+						 <input type="range" id="blue-slider" min="0" max="255" value="106">
+					 </div>
+
+					 <div class="color-cache"></div>
+				 </div>
+			 </div>
+		</div>
+
+		<script src="{% static 'mixer.js' %}"></script>
+	</body>
+</html>
