@@ -17,6 +17,27 @@ function cache() {
 	color_cache.append(color);
 }
 
+function rgbParser(unparsedInput) {
+	let size = unparsedInput.length;
+	var rgbParsedValues = []
+	var numberString = '';
+
+	for(var i = 0; i < size; ++i) {
+		if(!isNaN(unparsedInput[i])) {
+			for(var j = i; !isNaN(unparsedInput[j]); ++j) {
+				numberString += unparsedInput[j];
+			}
+			rgbParsedValues.push(Number(numberString));
+			numberString = '';
+			i = j;
+			j = 0;
+		} else {
+			continue;
+		}
+	}
+
+	return rgbParsedValues;
+}
 
 // update screenshot
 document.querySelector(".color-cache").addEventListener("click", function() {
@@ -25,9 +46,12 @@ document.querySelector(".color-cache").addEventListener("click", function() {
 
 	for(var i = 0; i < size; ++i) {
 		colors[i].onclick = function() {
-			redMarker.textContent = red;
-			greenMarker.textContent = green;
-			blueMarker.textContent = blue;
+			let values = rgbParser(this.style.backgroundColor);
+
+			redMarker.textContent = values[0];
+			greenMarker.textContent = values[1];
+			blueMarker.textContent = values[2];
+
 			screen.style.backgroundColor = this.style.backgroundColor;
 			screenshot.style.backgroundColor = this.style.backgroundColor;
 		}
