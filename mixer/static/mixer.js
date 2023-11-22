@@ -1,6 +1,6 @@
 var red = 52;
 var green = 71;
-var blue = 106; 
+var blue = 106;
 
 var color_cache = document.querySelector(".color-cache");
 var primary_color = document.querySelector("#primary-color");
@@ -14,6 +14,16 @@ function cache() {
 	var color = document.createElement("div");
 	color.setAttribute("class", "color");
 	color.style.backgroundColor = primary_color.textContent;
+	color.addEventListener("click", function() {
+		let values = rgbParser(color.style.backgroundColor);
+
+		redMarker.textContent = values[0];
+		greenMarker.textContent = values[1];
+		blueMarker.textContent = values[2];
+
+		screen.style.backgroundColor = color.style.backgroundColor;
+		screenshot.style.backgroundColor = color.style.backgroundColor;
+	})
 	color_cache.append(color);
 }
 
@@ -38,25 +48,6 @@ function rgbParser(unparsedInput) {
 
 	return rgbParsedValues;
 }
-
-// update screenshot
-document.querySelector(".color-cache").addEventListener("click", function() {
-	let size = this.children.length;
-	let colors = this.children;
-
-	for(var i = 0; i < size; ++i) {
-		colors[i].onclick = function() {
-			let values = rgbParser(this.style.backgroundColor);
-
-			redMarker.textContent = values[0];
-			greenMarker.textContent = values[1];
-			blueMarker.textContent = values[2];
-
-			screen.style.backgroundColor = this.style.backgroundColor;
-			screenshot.style.backgroundColor = this.style.backgroundColor;
-		}
-	}
-})
 
 //red slider
 document.querySelector("#red-slider").addEventListener("change", function() {
