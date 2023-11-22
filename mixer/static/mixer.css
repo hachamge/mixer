@@ -170,3 +170,23 @@ body {
 #blue {
 	color: blue;
 }
+
+
+.arrow {
+  position: relative;
+  display: inline-block;
+  padding: 0.5em 1em;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.arrow::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -10px; 
+  border-width: 10px;
+  border-style: solid;
+  border-color: #D8BFD8 transparent #D8BFD8 #D8BFD8;
+}
